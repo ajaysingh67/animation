@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Test1Component } from './childcomponents/test1/test1.component';
 import { Test2Component } from './childcomponents/test2/test2.component';
 import { Test3Component } from './childcomponents/test3/test3.component';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { Test3Component } from './childcomponents/test3/test3.component';
     MatInputModule,
     MatCheckboxModule,
     MatTabsModule,
+    NgxExtendedPdfViewerModule
   ],
   entryComponents:[TestComponent] ,
   providers: [],

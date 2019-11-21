@@ -10,58 +10,57 @@
       <textarea matInput placeholder="Leave a comment"></textarea>
     </mat-form-field>
   </form> -->
-  <!-- <mat-tab-group>
+<!-- <mat-tab-group>
     <mat-tab label="First"> Content 1 </mat-tab>
     <mat-tab label="Second"> Content 2 </mat-tab>
     <mat-tab label="Third"> Content 3 </mat-tab>
   </mat-tab-group> -->
 <!-- <div><a (click)="createComponent('testt')" >createeeeeee</a></div> -->
-  
-  <div>
-    <button mat-raised-button
-            class="example-add-tab-button"
-            (click)="addTab(selectAfterAdding.checked)">
-      Add new tab
+
+<div>
+  <button mat-raised-button class="example-add-tab-button" (click)="addTab(selectAfterAdding.checked)">
+    Add new tab
+  </button>
+  <mat-checkbox #selectAfterAdding> Select tab after adding </mat-checkbox>
+</div>
+
+<mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+  <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+    <app-test></app-test>
+    <app-test1></app-test1>
+    Contents for {{tab}} tab
+
+    <button mat-raised-button class="example-delete-tab-button" [disabled]="tabs.length === 1"
+      (click)="removeTab(index)">
+      Delete Tab
     </button>
-    <mat-checkbox #selectAfterAdding> Select tab after adding </mat-checkbox>
-  </div>
-  
-  <mat-tab-group [selectedIndex]="selected.value"
-                 (selectedIndexChange)="selected.setValue($event)">
-    <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
-        <app-test></app-test>
-        <app-test1></app-test1>
-      Contents for {{tab}} tab
-  
-      <button mat-raised-button
-              class="example-delete-tab-button"
-              [disabled]="tabs.length === 1"
-              (click)="removeTab(index)">
-        Delete Tab
-      </button>
-    </mat-tab>
-  </mat-tab-group>
-  <app-test2></app-test2>
-  <button type="button" (click)="showDetails()">
-    Toggle Details
+  </mat-tab>
+</mat-tab-group>
+<app-test2></app-test2>
+<button type="button" (click)="showDetails()">
+  Toggle Details
 </button>
-<ng-container >
-<div class="card-body" *ngIf="showCardBody"  [@inOutAnimation]>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-       Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-         It has survived not only five centuries, but also the leap into electronic typesetting, 
-         remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</div>
-</ng-container>
-<ng-container >
-<div class="card-body" *ngIf="!showCardBody"  [@inOutAnimation]>
-  <p>This is some content</p>
-  <p>This is some content</p>
-  <p>This is some content</p>       
-  <p>This is some content</p>
-  <p>This is some content</p>
-</div>
-</ng-container>
-  
+
+
+
+
+<section class="profile">
+
+  <div class="shared-content">
+    <div class="content">
+      <div class="row">
+        <div class="preview">
+          <ul style="list-style-type:disc;">
+            <li>The issue is all about documents [32]</li>
+            <li>KYC to be completed [19]</li>
+            <li>Get disability certificate for the applicant [46]</li>
+          </ul>
+        </div>
+        <div class="show-more">
+          <a href="#">Show More</a>
+        </div>
+      </div>
+
+    </div>
+    </div>
+</section>
